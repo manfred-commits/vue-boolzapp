@@ -56,16 +56,15 @@ textarea:focus, input:focus{
     height: 100%;
     background-color: red;
     display: flex;
-    flex-wrap: wrap;    
+    flex-direction: column;  
     align-content: flex-start
 
 }
 
 .account-container .header-account-formatting{
     display: flex;
-    height: 8vh;
-    align-items: flex-start;
     width: 100%;
+    padding: 5px;
     align-items: center;
 }
 
@@ -89,7 +88,9 @@ textarea:focus, input:focus{
 
 /* notification bell  */
 
-
+.header-account-formatting.color-blu{
+    padding: 10px 0;
+}
 .header-account-formatting.color-blu i{
     border-radius: 50%;
     width: 40px;
@@ -109,7 +110,6 @@ textarea:focus, input:focus{
 #search-bar-container{
     display: flex;
     width: 100%;
-    height: 6vh;
     align-items: center;
     justify-content: center;
     background-color: #fafafa;
@@ -156,7 +156,6 @@ textarea:focus, input:focus{
     overflow-y: scroll;
     flex-grow: 2;
     width: 100%;
-    height: calc(100% - 22vh);
 }
 .account-container .contacts-container ul{
     list-style: none;
