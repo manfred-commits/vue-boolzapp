@@ -17,6 +17,20 @@ body{
     justify-content: center;
     align-items: center;
 }
+h6{
+    font-size: 13px;
+    font-weight: 400;
+}
+a{
+    color: #5e8da3;
+    padding: 5px 0;
+}
+.color-blu{
+    background: #8edafc;
+}
+.color-lightgrey{
+    background: #eaeaea;
+}
 
 /* /general rules */
 
@@ -38,20 +52,20 @@ body{
     height: 100%;
     background-color: red;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap;    
+    align-content: flex-start
 
 }
 
-.account-container .header-account{
+.account-container .header-account-formatting{
     display: flex;
-    height: 10vh;
+    height: 8vh;
     align-items: flex-start;
     width: 100%;
     align-items: center;
-    background: #eaeaea;
 }
 
-.account-container .header-account img#user-account{
+.account-container .header-account-formatting img#user-account{
     width: 40px;
     border-radius: 50%;
     margin: 5px 10px;
@@ -59,13 +73,28 @@ body{
     object-position: center;
 }
 
-.header-account .container-icons{
+.header-account-formatting .container-icons{
     margin-left: auto;
     padding: 5px;
 }
-.header-account .container-icons i{
+.header-account-formatting .container-icons i{
     padding: 5px;
-    color: rgba(177, 177, 177, 0.8)
+    cursor: pointer;
+    color: rgba(177, 177, 177, 0.8);
+}
+
+
+
+.header-account-formatting.color-blu i{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+    margin-right: 10px;
+    line-height: 40px;
+    text-align: center;
+    background: white;
+    color: #8edafc;
 }
 
 
