@@ -162,9 +162,10 @@ textarea:focus, input:focus{
     list-style: none;
 }
 .account-container .contacts-container ul li{
-    background-color: #e9ebeb;
+    /* background-color: #e9ebeb; */
+    border-top: 1px solid #ececec;
     display: flex;
-    padding: 10px;
+    padding: 8px;
 }
 
 .account-container .contacts-container ul li img{

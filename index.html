@@ -65,9 +65,9 @@
                 <!-- contacts section -->
                 <div class="contacts-container">
                     <ul>
-                        <li>
-                            <img src="./img/avatar_1.jpg" alt="">
-                            <h5>Michele</h5>
+                        <li v-for="(contact,index) in contacts" :key="index">
+                            <img :src="'./img/avatar' + contact.avatar +'.jpg'" alt="contact profile img">
+                            <h5>{{contact.name}}</h5>
                         </li>
                     </ul>
                 </div>
