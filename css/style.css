@@ -27,6 +27,7 @@ a{
 }
 i{
     font-size: 19px;
+    cursor: pointer;
 }
 /* to remove the borders on input focus */
 textarea:focus, input:focus{
@@ -48,6 +49,7 @@ textarea:focus, input:focus{
     display: flex;
     background-color: white;
     height: 90vh;
+    box-shadow: -2px 5px 11px -1px #a8a8a8;
 }
 
 

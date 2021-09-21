@@ -83,12 +83,17 @@ var app = new Vue({
                 ],
             },
         ],
-        
+        contactIndex:0,
     },
     mounted:function(){
         
     },
     methods:{
+        selectChat: function(contactsIndex){
+            console.log(contactsIndex);
+            this.contactIndex=contactsIndex;
+            console.log(this.contactIndex);
+        }
 
     }
 });
