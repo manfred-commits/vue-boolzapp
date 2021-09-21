@@ -57,7 +57,7 @@ textarea:focus, input:focus{
     background-color: red;
     display: flex;
     flex-direction: column;  
-    align-content: flex-start
+    align-content: flex-start;
 
 }
 
@@ -194,10 +194,28 @@ textarea:focus, input:focus{
 
 /* chat section */
 
-.chat-container{
+.chat-container {
     width: 60%;
     height: 100%;
     background-color: brown;
+}
+.chat-container .header-account-formatting.color-lightgrey{
+    border-left: 1px solid #d8d8d8;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.chat-container img#user-account{
+    width: 40px;
+    border-radius: 50%;
+    margin: 10px 10px;
+    object-fit: contain;
+    object-position: center;
+}
+.chat-container .header-account-formatting.color-lightgrey h6 span{
+    font-size: 12px;
+    color: #7b8284;
+
 }
 
 /* /chat section */
