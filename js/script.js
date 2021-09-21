@@ -86,6 +86,7 @@ var app = new Vue({
             },
         ],
         contactIndex:0,
+        messageInput:"",
     },
     mounted:function(){
         
@@ -97,12 +98,15 @@ var app = new Vue({
 
         },
 
-        // messageStatus: function(contactsIndex){
-        //     if(this.contacts[contactsIndex].messages.status=='sent'){
-        //         return true;
-        //     };
-        //     return false;
-        // }
+        sendMessage: function(){
+            console.log(this.contacts[this.contactIndex].messages);
+            this.contacts[this.contactIndex].messages.push({
+              date :'10/01/2020 15:50:00',
+              message: this.messageInput,
+              status: 'sent'
+            })
+            console.log(this.contacts[this.contactIndex].messages);
+        }
 
     }
 });

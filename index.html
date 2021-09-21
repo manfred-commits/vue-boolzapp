@@ -116,7 +116,7 @@
 
                 <div class="chat-input-container">
                     <i class="far fa-smile"></i>
-                    <input type="text" placeholder="Inserisci un messaggio">
+                    <input v-model="messageInput" @click="sendMessage" type="text" placeholder="Inserisci un messaggio">
                     <i class="fas fa-microphone"></i>
                 </div>
 
