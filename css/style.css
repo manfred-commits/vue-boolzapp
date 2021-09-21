@@ -25,6 +25,9 @@ a{
     color: #5e8da3;
     padding: 5px 0;
 }
+i{
+    font-size: 19px;
+}
 /* to remove the borders on input focus */
 textarea:focus, input:focus{
     outline: none;
@@ -197,6 +200,9 @@ textarea:focus, input:focus{
 .chat-container {
     width: 60%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     background-color: brown;
 }
 .chat-container .header-account-formatting.color-lightgrey{
@@ -217,6 +223,52 @@ textarea:focus, input:focus{
     color: #7b8284;
 
 }
+
+
+
+
+/* section main chat  */
+
+.main-chat-container{
+    flex-grow: 3;
+}
+
+/* /section main chat  */
+
+
+
+
+
+
+/* section chat input */
+
+
+.chat-input-container{
+   background-color: #f3eeea; 
+   width: 100%;
+   display: flex;
+   align-items: center;
+}
+.chat-input-container i{
+    padding: 10px 20px;
+    color: #6b7376;
+    font-size: 22px;
+
+}
+.chat-input-container input{
+    flex-grow: 2;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    padding: 15px;
+}
+
+
+/* /section chat input */
+
+
+
+
 
 /* /chat section */
 
