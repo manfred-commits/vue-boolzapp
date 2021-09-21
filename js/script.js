@@ -87,7 +87,9 @@ var app = new Vue({
         ],
         contactIndex:0,
         messageInput:"",
-        response:""
+        response:"",
+        filter:"",
+        filObj:[],
     },
     mounted:function(){
         
@@ -131,7 +133,14 @@ var app = new Vue({
             // calling the method pushReply() here, allows us to start the method (pushReply()) that sends the reply ìok' after x amount of time
             this.pushReply();
         },
-
+        filteredObj: function(){
+            if(!this.filter==""){
+                
+                let newObj= this.contacts.filter(el => el.name.includes(this.filter));
+                console.log(newObj);
+                this.filObj.push(newObj);
+            }
+        },
 
     }
 });
