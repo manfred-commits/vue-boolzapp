@@ -103,7 +103,7 @@
                 <div class="main-chat-container">
                     <div class="messages-container">
                         <ul>
-                            <li v-for="(contact,index) in contacts[contactIndex].messages" :key="index" class="message-box received-msg">
+                            <li :class="contact.status=='sent' ? 'sent-msg': 'received-msg'" v-for="(contact,index) in contacts[contactIndex].messages" :key="index" class="message-box">
                                 <h6>{{contact.message}}</h6>
                                 <span>{{contact.date}}</span>
                             </li>

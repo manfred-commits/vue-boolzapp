@@ -41,7 +41,9 @@ var app = new Vue({
                     {
                         date: '20/03/2020 16:35:00',
                         message: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                        status: 'received'
+                        // penso il valore fornito qui sia sbagliato
+                        // status: 'received'
+                        status: 'sent'
                     }
                 ],
             },
@@ -90,11 +92,11 @@ var app = new Vue({
     },
     methods:{
         selectChat: function(contactsIndex){
-            console.log(contactsIndex);
+
             this.contactIndex=contactsIndex;
-            console.log(this.contactIndex);
+
         },
-        
+
         // messageStatus: function(contactsIndex){
         //     if(this.contacts[contactsIndex].messages.status=='sent'){
         //         return true;
