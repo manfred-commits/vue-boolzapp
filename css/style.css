@@ -10,6 +10,48 @@
 /* general rules */
 body{
     font-family: 'Lato', sans-serif;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(to top, #d4dbd9, #d4dbd9 50%, #d4dbd9 80%, #009688 75%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* /general rules */
+
+/* application section */
+
+.container-app{
+    width: 80%;
+    display: flex;
+    background-color: white;
+    height: 90vh;
+}
+
+
+
+/* account section */
+
+.account-container{
+    width: 40%;
+    height: 100%;
+    background-color: red;
+
+}
+/* /account section */
+
+
+
+/* chat section */
+
+.chat-container{
+    width: 60%;
+    height: 100%;
+    background-color: brown;
+}
+
+/* /chat section */
+
+
+/* /application section */
