@@ -65,7 +65,7 @@
                 <!-- contacts section -->
                 <div class="contacts-container">
                     <ul>
-                        <li @click="selectChat(index)" v-for="(contact,index) in contacts" :key="index">
+                        <li :class="contactIndex==index ? 'selected': ''" @click="selectChat(index)" v-for="(contact,index) in contacts" :key="index">
                             <img :src="'./img/avatar' + contact.avatar +'.jpg'" alt="contact profile img">
                             <h5>{{contact.name}}</h5>
                         </li>

@@ -39,7 +39,9 @@ textarea:focus, input:focus{
 .color-lightgrey{
     background: #eaeaea;
 }
-
+.selected{
+    background-color: #e9ebeb;
+}
 /* /general rules */
 
 /* application section */

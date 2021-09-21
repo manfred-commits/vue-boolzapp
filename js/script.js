@@ -93,7 +93,14 @@ var app = new Vue({
             console.log(contactsIndex);
             this.contactIndex=contactsIndex;
             console.log(this.contactIndex);
-        }
+        },
+        
+        // messageStatus: function(contactsIndex){
+        //     if(this.contacts[contactsIndex].messages.status=='sent'){
+        //         return true;
+        //     };
+        //     return false;
+        // }
 
     }
 });
