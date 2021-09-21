@@ -87,26 +87,51 @@ var app = new Vue({
         ],
         contactIndex:0,
         messageInput:"",
+        response:""
     },
     mounted:function(){
         
     },
     methods:{
+        // this method pushes the value of a selected contact, and saves it into the variable contactIndex
         selectChat: function(contactsIndex){
 
             this.contactIndex=contactsIndex;
 
         },
 
+
+        // thid methos sends a reply to an input msg sent by the user, in the specific array of objects selected by contactIndex
+        sendReply:function(){
+            this.contacts[this.contactIndex].messages.push({
+                date :'10/01/2020 15:50:00',
+                message: 'ok',
+                status: 'received'
+              });
+        },
+
+
+        // this method executes the push of the reply after a specific amount of seconds
+        pushReply: function(){
+            this.response=setTimeout(this.sendReply, 1000); 
+        },
+
+
+        // this method sends the user msg, inserted through the chat input, in the specific array of objects selected by contactIndex
         sendMessage: function(){
-            console.log(this.contacts[this.contactIndex].messages);
+
             this.contacts[this.contactIndex].messages.push({
               date :'10/01/2020 15:50:00',
               message: this.messageInput,
               status: 'sent'
-            })
-            console.log(this.contacts[this.contactIndex].messages);
-        }
+            });
+
+            this.messageInput="";
+
+            // calling the method pushReply() here, allows us to start the method (pushReply()) that sends the reply ìok' after x amount of time
+            this.pushReply();
+        },
+
 
     }
 });
