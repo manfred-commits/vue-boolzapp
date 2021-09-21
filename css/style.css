@@ -231,8 +231,51 @@ textarea:focus, input:focus{
 
 .main-chat-container{
     flex-grow: 3;
+    background-image: url(../img/mine.jpg);
+    background-position: center;
+    width: 100%;
+    overflow-y: scroll;
 }
-
+.main-chat-container .messages-container{
+    width: 70%;
+    height: calc( 100% - 65px);
+    margin: auto;
+    margin-top: 50px;
+}
+.main-chat-container .messages-container ul{
+    list-style: none;
+}
+.main-chat-container .messages-container ul li {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.main-chat-container .messages-container ul li .message-box{
+    width: 45%;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0px 0 10px;
+}
+.main-chat-container .messages-container ul li .message-box span{
+    font-size: 11px;
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+    color: #c8cbcc;
+}
+.msg-sent{
+    justify-content: flex-end;
+    
+}
+.color-sent{
+    background-color: #d5f9ba;
+}
+.color-received{
+    background-color: #ffffff;
+}
+.msg-received{
+    justify-content: flex-start;
+}
 /* /section main chat  */
 
 
