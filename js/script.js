@@ -92,7 +92,7 @@ var app = new Vue({
         oldObj:[]
     },
     mounted:function(){
-        
+        this.copyArr();
     },
     methods:{
         // this method pushes the value of a selected contact, and saves it into the variable contactIndex
@@ -138,17 +138,19 @@ var app = new Vue({
         // if the filter length is >0 therefore the input is being used, it pushes the new filtered array into the 
         // contacts obj, so that only the filtered contacts show. Else, it restores the old array, that was saved in 
         // oldObj
+        copyArr: function(){
+            this.oldObj=[...this.contacts];
+        },
         filteredObj: function(){
             
             if(this.filter.length>0){
-                this.oldObj=[...this.contacts];
                 let newObj= this.contacts.filter(el => el.name.includes(this.filter));
                 this.contacts=newObj;
-            }else {
-
+            }else{
                 this.contacts=this.oldObj;
-
             }
+
+            
 
         },
 
