@@ -101,7 +101,8 @@ var app = new Vue({
         messageInput:"",
         response:"",
         filter:"",
-        visible:false
+        visible:false,
+        popUpChecker:0,
     },
     mounted:function(){
 
@@ -167,30 +168,19 @@ var app = new Vue({
         },
         boxPopup: function(boxState){
             
-            if(boxState.infoBox==true){
-                boxState.infoBox=false;
-                
-            }else{
+            if(boxState.infoBox==false && this.popUpChecker == 0){
+                this.popUpChecker++;
                 boxState.infoBox=true;
+            }else if(boxState.infoBox==true){
+                boxState.infoBox=false;
+                this.popUpChecker=0;
+            } else if(this.popUpChecker != 0){
+                this.popUpChecker=0;
             }
         },
         deleteMessage: function(messageIndex,state){
-            console.log(messageIndex);
-            console.log(this.contacts[this.contactIndex].messages);
+            
             this.contacts[this.contactIndex].messages.splice(messageIndex,1);
-            console.log(this.contacts[this.contactIndex].messages);
-
-
-            this.contacts[this.contactIndex].messages.forEach(contact => {
-
-                console.log(contact);
-                console.log(contact.infoBox);
-                contact.infoBox=false;
-                console.log(contact.infoBox);
-
-                console.log(contact);
-
-            });
 
         }
     }
