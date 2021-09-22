@@ -56,7 +56,7 @@
                 <div id="search-bar-container">
                     <div class="search-bar-formatting">
                         <i class="fas fa-search"></i>
-                        <input type="text" v-model="filter" @change="filteredObj" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" v-model="filter" v-on:input="filteredObj" placeholder="Cerca o inizia una nuova chat">
                     </div>
                 </div>
                 
@@ -65,11 +65,7 @@
                 <!-- contacts section -->
                 <div class="contacts-container">
                     <ul>
-                        <li v-if="filter==''" :class="contactIndex==index ? 'selected': ''" @click="selectChat(index)" v-for="(contact,index) in contacts" :key="index">
-                            <img :src="'./img/avatar' + contact.avatar +'.jpg'" alt="contact profile img">
-                            <h5>{{contact.name}}</h5>
-                        </li>
-                        <li v-if="!filter==''" :class="contactIndex==index ? 'selected': ''" @click="selectChat(index)" v-for="(contact,index) in filObj" :key="index">
+                        <li :class="contactIndex==index ? 'selected': ''" @click="selectChat(index)" v-for="(contact,index) in contacts" :key="index">
                             <img :src="'./img/avatar' + contact.avatar +'.jpg'" alt="contact profile img">
                             <h5>{{contact.name}}</h5>
                         </li>
@@ -107,11 +103,7 @@
                 <div class="main-chat-container">
                     <div class="messages-container">
                         <ul>
-                            <li v-if="filter==''" :class="contact.status=='sent' ? 'sent-msg': 'received-msg'" v-for="(contact,index) in contacts[contactIndex].messages" :key="index" class="message-box">
-                                <h6>{{contact.message}}</h6>
-                                <span>{{contact.date}}</span>
-                            </li>
-                            <li v-if="!filter==''" :class="contact.status=='sent' ? 'sent-msg': 'received-msg'" v-for="(contact,index) in filObj[contactIndex].messages" :key="index" class="message-box">
+                            <li :class="contact.status=='sent' ? 'sent-msg': 'received-msg'" v-for="(contact,index) in contacts[contactIndex].messages" :key="index" class="message-box">
                                 <h6>{{contact.message}}</h6>
                                 <span>{{contact.date}}</span>
                             </li>
