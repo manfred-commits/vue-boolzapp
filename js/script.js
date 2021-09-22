@@ -92,7 +92,7 @@ var app = new Vue({
         oldObj:[]
     },
     mounted:function(){
-        // this.copyArr();
+
     },
     methods:{
         // this method pushes the value of a selected contact, and saves it into the variable contactIndex
@@ -133,32 +133,12 @@ var app = new Vue({
             // calling the method pushReply() here, allows us to start the method (pushReply()) that sends the reply ìok' after x amount of time
             this.pushReply();
         },
-        // this method creates a shallow copy of the original array and copies it to oldObj, then 
-        // creates a newObj equal to the filtered array that includes the user input (from the filter variable)
-        // if the filter length is >0 therefore the input is being used, it pushes the new filtered array into the 
-        // contacts obj, so that only the filtered contacts show. Else, it restores the old array, that was saved in 
-        // oldObj
-        // copyArr: function(){
-        //     this.oldObj=[...this.contacts];
-        // },
-        // filteredObj: function(){
-            
-        //     if(this.filter.length>0){
-        //         let newObj= this.contacts.filter(el => el.name.includes(this.filter));
-        //         this.contacts=newObj;
-        //     }else{
-        //         this.contacts=this.oldObj;
-        //     }
-
-            
-
-        // },
+        // this method changes the value of the visible boolean property(in the contacts array), switching the value to true if the user input is included into the array contacts & to false if the userinput isn't included. Then when the user input is, once again "" it resets all the visible values in contacts to true (so that all the contacts can be shown)
         filteredObj: function(){
             if(this.filter.length>0){
                 
                 this.contacts.forEach(contact => {
 
-                    console.log(contact.name.includes(this.filter));
                     if(contact.name.includes(this.filter)){
                         contact.visible=true;
                     }else{
