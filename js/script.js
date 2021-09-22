@@ -174,12 +174,23 @@ var app = new Vue({
                 boxState.infoBox=true;
             }
         },
-        deleteMessage: function(messageIndex){
+        deleteMessage: function(messageIndex,state){
             console.log(messageIndex);
             console.log(this.contacts[this.contactIndex].messages);
             this.contacts[this.contactIndex].messages.splice(messageIndex,1);
             console.log(this.contacts[this.contactIndex].messages);
-            console.log(this.contacts[this.contactIndex].messages[messageIndex+1].infoBox);
+
+
+            this.contacts[this.contactIndex].messages.forEach(contact => {
+
+                console.log(contact);
+                console.log(contact.infoBox);
+                contact.infoBox=false;
+                console.log(contact.infoBox);
+
+                console.log(contact);
+
+            });
 
         }
     }
