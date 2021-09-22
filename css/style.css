@@ -254,6 +254,7 @@ textarea:focus, input:focus{
     justify-content: flex-start;
 }
 .main-chat-container .messages-container ul li.message-box{
+    position: relative;
     border-radius: 10px;
     padding: 10px;
     margin: 5px;
@@ -266,6 +267,25 @@ textarea:focus, input:focus{
     text-align: right;
     color: #c8cbcc;
 }
+
+
+/* BONUS */
+
+.main-chat-container .messages-container ul li.message-box .delete-box{
+    position: absolute;
+    z-index: 4;
+    box-shadow: -2px 5px 11px -1px #a8a8a8;
+    bottom: -45px;
+    left: 80px;
+    background-color: #fff;
+    width: 150px;
+    text-align: center;
+}
+.main-chat-container .messages-container ul li.message-box .delete-box h6{
+    padding: 5px;
+}
+
+/* BONUS */
 
 .main-chat-container .messages-container ul li.message-box.sent-msg{
     margin-left: auto;
