@@ -133,21 +133,22 @@ var app = new Vue({
             // calling the method pushReply() here, allows us to start the method (pushReply()) that sends the reply ìok' after x amount of time
             this.pushReply();
         },
+        // this method creates a shallow copy of the original array and copies it to oldObj, then 
+        // creates a newObj equal to the filtered array that includes the user input (from the filter variable)
+        // if the filter length is >0 therefore the input is being used, it pushes the new filtered array into the 
+        // contacts obj, so that only the filtered contacts show. Else, it restores the old array, that was saved in 
+        // oldObj
         filteredObj: function(){
             
             if(this.filter.length>0){
                 this.oldObj=[...this.contacts];
                 let newObj= this.contacts.filter(el => el.name.includes(this.filter));
-                console.log(this.oldObj)
-                console.log(this.contacts);
                 this.contacts=newObj;
-            }else if(this.filter==""){
+            }else {
 
                 this.contacts=this.oldObj;
-                console.log(this.contacts)
 
             }
-            console.log(this.oldObj)
 
         },
 
