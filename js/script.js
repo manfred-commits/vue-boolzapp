@@ -166,8 +166,6 @@ var app = new Vue({
             }
         },
         boxPopup: function(boxState){
-            console.log(boxState);
-            console.log(boxState.infoBox);
             
             if(boxState.infoBox==true){
                 boxState.infoBox=false;
@@ -175,7 +173,14 @@ var app = new Vue({
             }else{
                 boxState.infoBox=true;
             }
-        }
+        },
+        deleteMessage: function(messageIndex){
+            console.log(messageIndex);
+            console.log(this.contacts[this.contactIndex].messages);
+            this.contacts[this.contactIndex].messages.splice(messageIndex,1);
+            console.log(this.contacts[this.contactIndex].messages);
+            console.log(this.contacts[this.contactIndex].messages[messageIndex+1].infoBox);
 
+        }
     }
 });
