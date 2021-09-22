@@ -103,10 +103,10 @@
                 <div class="main-chat-container">
                     <div class="messages-container">
                         <ul>
-                            <li @click="" :class="contact.status=='sent' ? 'sent-msg': 'received-msg'" v-for="(contact,index) in contacts[contactIndex].messages" :key="index" class="message-box">
+                            <li @click="boxPopup(contact)" :class="contact.status=='sent' ? 'sent-msg': 'received-msg'" v-for="(contact,index) in contacts[contactIndex].messages" :key="index" class="message-box">
                                 <h6>{{contact.message}}</h6>
                                 <span>{{contact.date}}</span>
-                                <div v-if="true" class="delete-box">
+                                <div v-if="contact.infoBox" class="delete-box">
                                     <h6>Info messaggio</h6>
                                     <h6>Cancella messaggio</h6>
                                 </div>
