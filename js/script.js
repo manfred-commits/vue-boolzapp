@@ -10,6 +10,8 @@ var app = new Vue({
                     {
                         date: '10/01/2020 15:30:55',
                         message: 'Hai portato a spasso il cane?',
+                        visibility: true,
+
                         status: 'sent',
                         infoBox:{
                             visibility:false,
@@ -19,6 +21,8 @@ var app = new Vue({
                     {
                         date: '10/01/2020 15:50:00',
                         message: 'Ricordati di dargli da mangiare',
+                        visibility: true,
+
                         status: 'sent',
                         infoBox:{
                             visibility:false,
@@ -28,6 +32,8 @@ var app = new Vue({
                     {
                         date: '10/01/2020 16:15:22',
                         message: 'Tutto fatto!',
+                        visibility: true,
+
                         status: 'received',
                         infoBox:{
                             visibility:false,
@@ -43,6 +49,8 @@ var app = new Vue({
                 messages: [{
                     date: '20/03/2020 16:30:00',
                     message: 'Ciao come stai?',
+                    visibility: true,
+
                     status: 'sent',
                     infoBox:{
                         visibility:false,
@@ -52,6 +60,8 @@ var app = new Vue({
                     {
                         date: '20/03/2020 16:30:55',
                         message: 'Bene grazie! Stasera ci vediamo?',
+                        visibility: true,
+
                         status: 'received',
                         infoBox:{
                             visibility:false,
@@ -61,6 +71,8 @@ var app = new Vue({
                     {
                         date: '20/03/2020 16:35:00',
                         message: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                        visibility: true,
+
                         // penso il valore fornito qui sia sbagliato
                         // status: 'received'
                         status: 'sent',
@@ -78,6 +90,8 @@ var app = new Vue({
                 messages: [{
                     date: '28/03/2020 10:10:40',
                     message: 'La Marianna va in campagna',
+                    visibility: true,
+
                     status: 'received',
                     infoBox:{
                         visibility:false,
@@ -87,6 +101,8 @@ var app = new Vue({
                     {
                         date: '28/03/2020 10:20:10',
                         message: 'Sicuro di non aver sbagliato chat?',
+                        visibility: true,
+
                         status: 'sent',
                         infoBox:{
                             visibility:false,
@@ -97,6 +113,8 @@ var app = new Vue({
                         date: '28/03/2020 16:15:22',
                         message: 'Ah scusa!',
                         status: 'received',
+                        visibility: true,
+
                         infoBox:{
                             visibility:false,
                             index:2
@@ -112,6 +130,8 @@ var app = new Vue({
                     date: '10/01/2020 15:30:55',
                     message: 'Lo sai che ha aperto una nuova pizzeria?',
                     status: 'sent',
+                    visibility: true,
+
                     infoBox:{
                         visibility:false,
                         index:0
@@ -121,6 +141,7 @@ var app = new Vue({
                         date: '10/01/2020 15:50:00',
                         message: 'Si, ma preferirei andare al cinema',
                         status: 'received',
+                        visibility: true,
                         infoBox:{
                             visibility:false,
                             index:1
@@ -201,8 +222,7 @@ var app = new Vue({
         },
         boxPopup: function(boxState,index){
             if(boxState.infoBox.visibility==false && boxState.infoBox.index==index && this.popUpChecker==0){
-                console.log(boxState);
-                console.log(index);
+
                 boxState.infoBox.visibility=true;
                 this.popUpChecker=1;
             }else if(boxState.infoBox.visibility==true && boxState.infoBox.index==index && this.popUpChecker==1){
@@ -212,18 +232,11 @@ var app = new Vue({
             }
         },
         deleteMessage: function(messageIndex,state){
-            console.log(messageIndex);
-            this.contacts[this.contactIndex].messages.splice(messageIndex,1);
-            // this.getIndex();
+
+            state.visibility=false;
             this.popUpChecker=0;
 
-        },
-        getIndex: function(){
 
-            this.contacts[this.contactIndex].messages.forEach((element,index)=> {
-                console.log(`Indice ${element.infoBox.index}`);
-                element.infoBox.index=index;
-            });
-        }
+        },
     }
 });
