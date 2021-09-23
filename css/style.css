@@ -42,6 +42,9 @@ textarea:focus, input:focus{
 .selected{
     background-color: #e9ebeb;
 }
+.display{
+    display: none;
+}
 /* /general rules */
 
 /* application section */
