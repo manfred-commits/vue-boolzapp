@@ -215,6 +215,8 @@ var app = new Vue({
             console.log(messageIndex);
             this.contacts[this.contactIndex].messages.splice(messageIndex,1);
             // this.getIndex();
+            this.popUpChecker=0;
+
         },
         getIndex: function(){
 
