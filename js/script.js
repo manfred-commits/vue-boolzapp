@@ -179,7 +179,7 @@ var app = new Vue({
                 status: 'received',
                 infoBox:{
                     visibility:false,
-                    index:this.contacts[this.contactIndex].messages.length -1
+                    index:this.contacts[this.contactIndex].messages.length 
                 }
             }
             this.contacts[this.contactIndex].messages.push(obj);
@@ -203,7 +203,7 @@ var app = new Vue({
                 status: 'sent',
                 infoBox:{
                     visibility:false,
-                    index:this.contacts[this.contactIndex].messages.length -1
+                    index:this.contacts[this.contactIndex].messages.length
                 }
             }
             this.contacts[this.contactIndex].messages.push(obj);
