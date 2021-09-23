@@ -139,7 +139,6 @@ var app = new Vue({
         popUpChecker:0,
     },
     mounted:function(){
-        // this.getIndex(this.contacts[this.contactIndex].messages)
     },
     methods:{
         // this method pushes the value of a selected contact, and saves it into the variable contactIndex
@@ -210,14 +209,12 @@ var app = new Vue({
                 boxState.infoBox.visibility=false;
                 this.popUpChecker=0;
 
-            }else if(boxState.infoBox.visibility==false && boxState.infoBox.index==index && this.popUpChecker==0){
-                
             }
         },
         deleteMessage: function(messageIndex,state){
             console.log(messageIndex);
             this.contacts[this.contactIndex].messages.splice(messageIndex,1);
-            this.getIndex();
+            // this.getIndex();
         },
         getIndex: function(){
 
