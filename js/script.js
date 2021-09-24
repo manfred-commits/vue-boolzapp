@@ -160,21 +160,25 @@ var app = new Vue({
         popUpChecker:0,
     },
     mounted:function(){
+        this.returnDateTime();
     },
     methods:{
         // this method pushes the value of a selected contact, and saves it into the variable contactIndex
         selectChat: function(contactsIndex){
 
             this.contactIndex=contactsIndex;
-
+            
         },
-
+        
+        returnDateTime: function(){
+           return dayjs().format('DD/MM/YYYY HH:mm:ss');
+        },
 
         // thid methos sends a reply to an input msg sent by the user, in the specific array of objects selected by contactIndex
         sendReply:function(){
             let obj={
                 visibility:true,
-                date :'10/01/2020 15:50:00',
+                date :this.returnDateTime(),
                 message: 'ok',
                 status: 'received',
                 infoBox:{
@@ -183,10 +187,10 @@ var app = new Vue({
                 }
             }
             this.contacts[this.contactIndex].messages.push(obj);
-
+            
         },
-
-
+        
+        
         // this method executes the push of the reply after a specific amount of seconds
         pushReply: function(){
             this.response=setTimeout(this.sendReply, 1000); 
@@ -198,7 +202,7 @@ var app = new Vue({
 
             let obj={
                 visibility:true,
-                date :'10/01/2020 15:50:00',
+                date :this.returnDateTime(),
                 message: this.messageInput,
                 status: 'sent',
                 infoBox:{
