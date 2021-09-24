@@ -158,9 +158,11 @@ var app = new Vue({
         filter:"",
         visible:false,
         popUpChecker:0,
+        date: null,
     },
     mounted:function(){
         this.returnDateTime();
+        console.log(this.contacts[this.contactIndex].avatar);
     },
     methods:{
         // this method pushes the value of a selected contact, and saves it into the variable contactIndex
@@ -171,6 +173,8 @@ var app = new Vue({
         },
         
         returnDateTime: function(){
+            this.date=dayjs().format('DD/MM/YYYY HH:mm:ss');
+            console.log(this.date);
            return dayjs().format('DD/MM/YYYY HH:mm:ss');
         },
 

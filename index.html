@@ -86,10 +86,10 @@
             <section class="chat-container">
 
                 <div class="header-account-formatting color-lightgrey">
-                    <img id="user-account" src="./img/avatar_io.jpg" alt="">
+                    <img id="user-account" :src="'./img/avatar'+ contacts[contactIndex].avatar +'.jpg'" alt="">
                     <h6>
-                        Nome Utente <br>
-                        <span>Ultimo accesso oggi alle</span>
+                        {{contacts[contactIndex].name}} <br>
+                        <span>Ultimo accesso oggi alle {{date}}</span>
                     </h6>
                     <div class="container-icons">
                         <i class="fas fa-search"></i>
