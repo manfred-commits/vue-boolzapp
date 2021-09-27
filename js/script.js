@@ -226,7 +226,7 @@ var app = new Vue({
                 
                 this.contacts.forEach(contact => {
 
-                    if(contact.name.includes(this.filter)){
+                    if(contact.name.toLowerCase().includes(this.filter.toLowerCase())){
                         contact.visible=true;
                     }else{
                         contact.visible=false;
