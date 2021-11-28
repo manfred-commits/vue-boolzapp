@@ -85,7 +85,7 @@ var app = new Vue({
             },
             {
                 name: 'Samuele',
-                avatar: '_3',
+                avatar: '_8',
                 visible: true,
                 messages: [{
                     date: '28/03/2020 10:10:40',
@@ -124,7 +124,7 @@ var app = new Vue({
             },
             {
                 name: 'Luisa',
-                avatar: '_4',
+                avatar: '_6',
                 visible: true,
                 messages: [{
                     date: '10/01/2020 15:30:55',
@@ -159,6 +159,7 @@ var app = new Vue({
         visible:false,
         popUpChecker:0,
         date: null,
+        lastMsg:[],
     },
     mounted:function(){
         this.returnDateTime();
@@ -251,12 +252,28 @@ var app = new Vue({
 
             }
         },
-        deleteMessage: function(messageIndex,state){
-
+        removeMsg: function(index,state){
+            this.contacts[this.contactIndex].messages.splice(index,1);
+        },
+        resetMessage: function(messageIndex,state){
             state.visibility=false;
             this.popUpChecker=0;
 
 
+        },
+        getLastDate:function(received,date){
+            if(received=='received'){
+                console.log(date);
+                let split=date.split(' ');
+                console.log(split[1]);;
+                if(this.date==date){
+                    return "ultimo accesso oggi alle"+split[0];
+                }else{
+
+                    return "ultimo accesso "+ split[0]+ " alle "+split[1];
+                }
+            }
+            
         },
     }
 });
