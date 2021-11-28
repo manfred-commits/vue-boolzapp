@@ -164,6 +164,29 @@ textarea:focus, input:focus{
     flex-grow: 2;
     width: 100%;
 }
+.account-container .contacts-container .account-text-container{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+.account-container .contacts-container h5{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 80%;
+    font-weight: 400;
+}
+.account-container .contacts-container h5 span{
+    width: 100%;
+    color: grey;
+}
+.account-container .contacts-container .account-last-seen{
+    display: inline-block; 
+    width: 60%;
+    font-size: 12px;
+    color: grey;
+    text-align: right;
+}
 .account-container .contacts-container ul{
     list-style: none;
 }
@@ -171,6 +194,7 @@ textarea:focus, input:focus{
     /* background-color: #e9ebeb; */
     border-top: 1px solid #ececec;
     display: flex;
+    flex-wrap: wrap;
     padding: 8px;
 }
 
