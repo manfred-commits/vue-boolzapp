@@ -32,7 +32,7 @@
             <section class="account-container">
 
                 <div class="header-account-formatting color-lightgrey">
-                    <img id="user-account" src="./img/avatar_io.jpg" alt="">
+                    <img id="user-account" src="./img/avatar_3.jpg" alt="">
                     <h6>Nome Utente</h6>
                     <div class="container-icons">
                         <i class="fas fa-circle-notch"></i>
@@ -67,7 +67,15 @@
                     <ul>
                         <li  :class="contactIndex==index ? 'selected': ''" @click="selectChat(index)" v-for="(contact,index) in contacts" :key="index" v-if="contact.visible">
                             <img :src="'./img/avatar' + contact.avatar +'.jpg'" alt="contact profile img">
-                            <h5>{{contact.name}}</h5>
+                            <div class="account-text-container">
+                                <h5>{{contact.name}}
+                                    <br>
+                                    <span>Tutto risolto, senza problemi!</span> 
+                                </h5>
+                                <span :class="message.status=='received'? 'account-last-seen':''" v-if="index>0" v-for="(message,index) in contact.messages">{{message.status=='received'? message.date : null}}</span>
+
+                            </div>
+                            
                         </li>
                     </ul>
                 </div>
@@ -89,7 +97,9 @@
                     <img id="user-account" :src="'./img/avatar'+ contacts[contactIndex].avatar +'.jpg'" alt="">
                     <h6>
                         {{contacts[contactIndex].name}} <br>
-                        <span>Ultimo accesso oggi alle {{date}}</span>
+                        <span v-if="index>0" v-for="(contact,index) in contacts[contactIndex].messages">
+                            {{getLastDate(contact.status,contact.date)}}
+                        </span>
                     </h6>
                     <div class="container-icons">
                         <i class="fas fa-search"></i>
